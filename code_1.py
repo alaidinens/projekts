@@ -16,18 +16,17 @@ def sadalit_naudu(pieejama_nauda):
     sadalijums = {k: (v / 100) * pieejama_nauda for k, v in izmaksas.items()}
     return sadalijums
 
-pieejama_nauda_budzets = float(input("Ievadiet pieejamo naudu uz nedēļu (nedēļas budžeta plānotājs): "))
+pieejama_nauda_budzets = float(input("Ievadiet pieejamo naudu uz nedēļu: "))
 
 izmaksu_sadalijums = sadalit_naudu(pieejama_nauda_budzets)
 
-print("\nPrognozētais izmaksu sadalījums (nedēļas budžeta plānotājs):")
+print("\nPrognozētais izmaksu sadalījums:")
 for k, v in izmaksu_sadalijums.items():
     print(f"{k}: {v:.2f} EUR")
     
 def ieguldijumi_uzkrajuma_konta(uzkrajuma_konts, ieguldijums):
     uzkrajuma_konts.append(ieguldijums)
     return uzkrajuma_konts
-
 
 sodienas_datums = datetime.date.today()
 atlikusie_dieni = 7 - sodienas_datums.weekday()
